@@ -2,14 +2,14 @@
 :root {
     --color-primary: #2196F3;
     --color-primary-dark: #1565C0;
-    --color-primary-light: #BA68C8;
-    --color-accent: #FF4081;
+    --color-primary-light: #43A047;
+    --color-accent: #43A047;
     --color-background: #18181B;
     --color-surface: #232329;
     --color-card: #232329;
     --color-text: #F8F9FA;
     --color-text-secondary: #B0B3B8;
-    --gradient-primary: linear-gradient(90deg, #2196F3 0%, #BA68C8 60%, #FF4081 100%);
+    --gradient-primary: linear-gradient(90deg, #2196F3 0%, #43A047 100%);
 }
 body {
     font-family: 'Inter', sans-serif;
@@ -17,13 +17,13 @@ body {
     color: var(--color-text);
     line-height: 1.6;
 }
-h1, h2, h3, h4, h5, h6, .gradient-text, .wordmark {
+h1, h2, h3, h4, h5, h6, .wordmark {
     font-family: 'Montserrat', 'Inter', sans-serif !important;
     font-weight: 700 !important;
-    letter-spacing: -2px;
+    letter-spacing: -1px;
 }
 .gradient-text {
-    background: var(--gradient-primary);
+    background: linear-gradient(90deg, #388E3C 0%, #FFEB3B 50%, #FF9800 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -39,7 +39,7 @@ h1, h2, h3, h4, h5, h6, .gradient-text, .wordmark {
 }
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 20px 25px -5px rgba(142, 36, 170, 0.15), 0 10px 10px -5px rgba(142, 36, 170, 0.08);
+    box-shadow: 0 20px 25px -5px rgba(33, 150, 243, 0.15), 0 10px 10px -5px rgba(33, 150, 243, 0.08);
 }
 .feature-icon {
     transition: transform 0.3s ease;
@@ -50,6 +50,8 @@ h1, h2, h3, h4, h5, h6, .gradient-text, .wordmark {
 .nav-link {
     position: relative;
     color: var(--color-text-secondary);
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
 }
 .nav-link::after {
     content: '';
@@ -58,7 +60,7 @@ h1, h2, h3, h4, h5, h6, .gradient-text, .wordmark {
     height: 2px;
     bottom: -2px;
     left: 0;
-    background-color: var(--color-primary);
+    background-color: var(--color-primary-light);
     transition: width 0.3s ease;
 }
 .nav-link:hover::after {
@@ -82,15 +84,19 @@ h1, h2, h3, h4, h5, h6, .gradient-text, .wordmark {
     background: var(--color-surface);
 }
 .btn-primary {
-    background: var(--color-primary);
+    background: #1565C0;
     color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
 }
 .btn-primary:hover {
-    background: var(--color-primary-dark);
+    background: #0D47A1;
 }
 .btn-outline {
     border: 2px solid var(--color-primary-light);
     color: var(--color-primary-light);
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
 }
 .btn-outline:hover {
     background: var(--color-primary-light);
@@ -100,6 +106,7 @@ input, textarea {
     background: var(--color-surface);
     color: var(--color-text);
     border: 1px solid #333;
+    font-family: 'Inter', sans-serif;
 }
 input:focus, textarea:focus {
     border-color: var(--color-primary);
