@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands:
+      - npm install -g aws-cli
+  build:
+    commands:
+      - echo "Building website..."
+      - cp -r src/* .
+  post_build:
+    commands:
+      - echo "Uploading to S3..."
+      - aws s3 sync . s3://seedlinglabs.com --delete
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: . 
