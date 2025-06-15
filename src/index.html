@@ -7,137 +7,70 @@
     <meta name="description" content="Seedling empowers organizations to build and launch sophisticated AI agents and full products in weeks, not months, through AI-Native Product Design & Development as a Service (PDaaS).">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --color-primary: #1a73e8;
-            --color-primary-dark: #174ea6;
-            --color-accent: #ea4335;
-            --color-background: #ffffff;
-            --color-text: #202124;
-            --color-text-secondary: #5f6368;
-            --gradient-primary: linear-gradient(135deg, #1a73e8 0%, #174ea6 100%);
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--color-background);
-            color: var(--color-text);
-            line-height: 1.6;
-        }
-
-        .hero-gradient {
-            background: var(--gradient-primary);
-        }
-
-        .card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-
-        .feature-icon {
-            transition: transform 0.3s ease;
-        }
-
-        .feature-card:hover .feature-icon {
-            transform: scale(1.1);
-        }
-
-        .nav-link {
-            position: relative;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -2px;
-            left: 0;
-            background-color: var(--color-primary);
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .animate-fade-in {
-            animation: fadeIn 0.6s ease-out forwards;
-        }
-    </style>
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body class="antialiased">
     <!-- Navigation -->
-    <nav class="fixed w-full bg-white/80 backdrop-blur-md z-50 shadow-sm">
+    <nav class="fixed w-full surface backdrop-blur-md z-50 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <img src="https://s3.ap-south-1.amazonaws.com/seedlinglabs.com/logo.png" 
-                         alt="Seedling Labs Logo" 
-                         class="h-8 w-auto"
-                         onerror="this.onerror=null;this.src='https://placehold.co/200x50/1a73e8/FFFFFF?text=Seedling+Labs';">
+                <div class="flex items-center gap-3">
+                    <img src="logo.svg" alt="Seedling Logo" class="seedling-logo mr-0" style="width:32px;height:32px;" />
+                    <span class="text-2xl font-bold wordmark text-white" style="margin-top:2px; letter-spacing:0;">Seedling Labs</span>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#vision" class="nav-link text-gray-600 hover:text-primary">Vision</a>
-                    <a href="#advantage" class="nav-link text-gray-600 hover:text-primary">Advantage</a>
-                    <a href="#workflow" class="nav-link text-gray-600 hover:text-primary">Workflow</a>
-                    <a href="#contact" class="bg-primary text-white px-6 py-2 rounded-full hover:bg-primary-dark transition duration-300">Contact Us</a>
+                    <a href="#vision" class="nav-link">Vision</a>
+                    <a href="#advantage" class="nav-link">Advantage</a>
+                    <a href="#workflow" class="nav-link">Workflow</a>
+                    <a href="#contact" class="btn-primary px-6 py-2 rounded-full font-semibold transition duration-300">Contact Us</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-gradient min-h-screen flex items-center pt-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-            <div class="text-center animate-fade-in">
-                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
-                    Building the Future of AI Products
+    <section class="min-h-screen flex items-center pt-16" style="background: var(--color-background);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col md:flex-row items-center gap-12">
+            <div class="flex-1 text-left animate-fade-in">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 gradient-text wordmark">
+                    Seedling
                 </h1>
-                <p class="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto">
-                    Transform your ideas into sophisticated AI products in weeks, not months. 
-                    Experience the power of AI-Native Product Development as a Service.
+                <h2 class="text-2xl md:text-3xl font-semibold mb-4" style="color: var(--color-text);">
+                    Supercharge your AI product development
+                </h2>
+                <p class="text-lg md:text-xl mb-10" style="color: var(--color-text-secondary);">
+                    Build and launch sophisticated AI agents and products in weeks, not months. Experience the power of AI-Native Product Design & Development as a Service.
                 </p>
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="#contact" class="bg-white text-primary px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300">
-                        Get Started
-                    </a>
-                    <a href="#workflow" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white/10 transition duration-300">
-                        Learn More
-                    </a>
+                <a href="#contact" class="btn-primary px-8 py-4 rounded-full text-lg font-semibold shadow-lg transition duration-300">
+                    Get Started
+                </a>
+            </div>
+            <div class="flex-1 flex justify-center items-center">
+                <div class="rounded-3xl overflow-hidden shadow-2xl" style="background: var(--color-surface);">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="AI Product" class="w-[400px] h-[300px] object-cover"/>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Vision Section -->
-    <section id="vision" class="py-20 bg-gray-50">
+    <section id="vision" class="py-20 surface">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Vision</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--color-primary-light);">Our Vision</h2>
+                <p class="text-xl" style="color: var(--color-text-secondary);">
                     Revolutionizing product development for the AI era
                 </p>
             </div>
             <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="card bg-white p-8 rounded-2xl shadow-lg">
-                    <p class="text-lg text-gray-700">
+                <div class="card p-8 rounded-2xl">
+                    <p class="text-lg" style="color: var(--color-text);">
                         At Seedling, we are creating an integrated ecosystem of AI tools, specialized "agent" platforms, 
                         open-source solutions, and strategic partnerships that streamline the entire product development lifecycle.
                     </p>
                 </div>
-                <div class="card bg-white p-8 rounded-2xl shadow-lg">
-                    <p class="text-lg text-gray-700">
+                <div class="card p-8 rounded-2xl">
+                    <p class="text-lg" style="color: var(--color-text);">
                         Our workbench is the engine driving Seedling's ability to deliver MVPs that are not only launched 
                         rapidly and cost-efficiently but also exhibit top-notch quality and innovation.
                     </p>
@@ -147,108 +80,108 @@
     </section>
 
     <!-- Advantage Section -->
-    <section id="advantage" class="py-20">
+    <section id="advantage" class="py-20" style="background: var(--color-background);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The Seedling Advantage</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--color-primary-light);">The Seedling Advantage</h2>
+                <p class="text-xl" style="color: var(--color-text-secondary);">
                     Partnering with Seedling translates into measurable benefits and a strong return on investment
                 </p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="feature-card bg-white p-6 rounded-2xl shadow-lg">
+                <div class="feature-card card p-6 rounded-2xl">
                     <div class="feature-icon text-primary text-4xl mb-4">⚡</div>
-                    <h3 class="text-xl font-semibold mb-3">Unprecedented Speed</h3>
-                    <p class="text-gray-600">Launch MVPs in weeks and AI agents in days, seizing market opportunities rapidly.</p>
+                    <h3 class="text-xl font-semibold mb-3" style="color: var(--color-primary-light);">Unprecedented Speed</h3>
+                    <p style="color: var(--color-text-secondary);">Launch MVPs in weeks and AI agents in days, seizing market opportunities rapidly.</p>
                 </div>
-                <div class="feature-card bg-white p-6 rounded-2xl shadow-lg">
+                <div class="feature-card card p-6 rounded-2xl">
                     <div class="feature-icon text-primary text-4xl mb-4">💰</div>
-                    <h3 class="text-xl font-semibold mb-3">Cost Efficiency</h3>
-                    <p class="text-gray-600">Reduce costs through AI-assisted workflows and eliminate overhead expenses.</p>
+                    <h3 class="text-xl font-semibold mb-3" style="color: var(--color-primary-light);">Cost Efficiency</h3>
+                    <p style="color: var(--color-text-secondary);">Reduce costs through AI-assisted workflows and eliminate overhead expenses.</p>
                 </div>
-                <div class="feature-card bg-white p-6 rounded-2xl shadow-lg">
+                <div class="feature-card card p-6 rounded-2xl">
                     <div class="feature-icon text-primary text-4xl mb-4">👥</div>
-                    <h3 class="text-xl font-semibold mb-3">Specialized Talent</h3>
-                    <p class="text-gray-600">Access AI-native teams cultivated through our specialized bootcamp program.</p>
+                    <h3 class="text-xl font-semibold mb-3" style="color: var(--color-primary-light);">Specialized Talent</h3>
+                    <p style="color: var(--color-text-secondary);">Access AI-native teams cultivated through our specialized bootcamp program.</p>
                 </div>
-                <div class="feature-card bg-white p-6 rounded-2xl shadow-lg">
+                <div class="feature-card card p-6 rounded-2xl">
                     <div class="feature-icon text-primary text-4xl mb-4">🚀</div>
-                    <h3 class="text-xl font-semibold mb-3">Rapid Innovation</h3>
-                    <p class="text-gray-600">Test ideas quickly and produce higher-quality outputs through AI augmentation.</p>
+                    <h3 class="text-xl font-semibold mb-3" style="color: var(--color-primary-light);">Rapid Innovation</h3>
+                    <p style="color: var(--color-text-secondary);">Test ideas quickly and produce higher-quality outputs through AI augmentation.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Workflow Section -->
-    <section id="workflow" class="py-20 bg-gray-50">
+    <section id="workflow" class="py-20 surface">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our AI-Native PDaaS Workflow</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--color-primary-light);">Our AI-Native PDaaS Workflow</h2>
+                <p class="text-xl" style="color: var(--color-text-secondary);">
                     Transforming the entire Software Development Lifecycle with AI
                 </p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="card bg-white p-6 rounded-2xl shadow-lg">
+                <div class="card p-6 rounded-2xl">
                     <div class="text-primary text-2xl mb-4">1</div>
-                    <h3 class="text-xl font-semibold mb-3">Ideation</h3>
-                    <p class="text-gray-600">AI-driven market trend analysis and problem framing</p>
+                    <h3 class="text-xl font-semibold mb-3" style="color: var(--color-primary-light);">Ideation</h3>
+                    <p style="color: var(--color-text-secondary);">AI-driven market trend analysis and problem framing</p>
                 </div>
-                <div class="card bg-white p-6 rounded-2xl shadow-lg">
+                <div class="card p-6 rounded-2xl">
                     <div class="text-primary text-2xl mb-4">2</div>
-                    <h3 class="text-xl font-semibold mb-3">Design Sprint</h3>
-                    <p class="text-gray-600">Accelerated creation of user flows and wireframes</p>
+                    <h3 class="text-xl font-semibold mb-3" style="color: var(--color-primary-light);">Design Sprint</h3>
+                    <p style="color: var(--color-text-secondary);">Accelerated creation of user flows and wireframes</p>
                 </div>
-                <div class="card bg-white p-6 rounded-2xl shadow-lg">
+                <div class="card p-6 rounded-2xl">
                     <div class="text-primary text-2xl mb-4">3</div>
-                    <h3 class="text-xl font-semibold mb-3">Prototyping</h3>
-                    <p class="text-gray-600">AI-driven code generation and rapid assembly</p>
+                    <h3 class="text-xl font-semibold mb-3" style="color: var(--color-primary-light);">Prototyping</h3>
+                    <p style="color: var(--color-text-secondary);">AI-driven code generation and rapid assembly</p>
                 </div>
-                <div class="card bg-white p-6 rounded-2xl shadow-lg">
+                <div class="card p-6 rounded-2xl">
                     <div class="text-primary text-2xl mb-4">4</div>
-                    <h3 class="text-xl font-semibold mb-3">Development</h3>
-                    <p class="text-gray-600">AI-assisted full-stack development and infrastructure</p>
+                    <h3 class="text-xl font-semibold mb-3" style="color: var(--color-primary-light);">Development</h3>
+                    <p style="color: var(--color-text-secondary);">AI-assisted full-stack development and infrastructure</p>
                 </div>
-                <div class="card bg-white p-6 rounded-2xl shadow-lg">
+                <div class="card p-6 rounded-2xl">
                     <div class="text-primary text-2xl mb-4">5</div>
-                    <h3 class="text-xl font-semibold mb-3">Testing</h3>
-                    <p class="text-gray-600">AI generation of test cases and validation</p>
+                    <h3 class="text-xl font-semibold mb-3" style="color: var(--color-primary-light);">Testing</h3>
+                    <p style="color: var(--color-text-secondary);">AI generation of test cases and validation</p>
                 </div>
-                <div class="card bg-white p-6 rounded-2xl shadow-lg">
+                <div class="card p-6 rounded-2xl">
                     <div class="text-primary text-2xl mb-4">6</div>
-                    <h3 class="text-xl font-semibold mb-3">Launch</h3>
-                    <p class="text-gray-600">AI-powered GTM and rapid iteration</p>
+                    <h3 class="text-xl font-semibold mb-3" style="color: var(--color-primary-light);">Launch</h3>
+                    <p style="color: var(--color-text-secondary);">AI-powered GTM and rapid iteration</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20">
+    <section id="contact" class="py-20" style="background: var(--color-background);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Ready to Build Your Next Product?</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--color-primary-light);">Ready to Build Your Next Product?</h2>
+                <p class="text-xl" style="color: var(--color-text-secondary);">
                     Connect with Seedling to discuss how our Starter or Accelerator tiers can meet your needs
                 </p>
             </div>
             <div class="max-w-2xl mx-auto">
-                <div class="card bg-white p-8 rounded-2xl shadow-lg">
+                <div class="card p-8 rounded-2xl">
                     <form class="space-y-6">
                         <div>
-                            <label class="block text-sm font-medium text-gray-700">Name</label>
-                            <input type="text" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary">
+                            <label class="block text-sm font-medium" style="color: var(--color-primary-light);">Name</label>
+                            <input type="text" class="mt-1 block w-full rounded-md shadow-sm">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700">Email</label>
-                            <input type="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary">
+                            <label class="block text-sm font-medium" style="color: var(--color-primary-light);">Email</label>
+                            <input type="email" class="mt-1 block w-full rounded-md shadow-sm">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700">Message</label>
-                            <textarea rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"></textarea>
+                            <label class="block text-sm font-medium" style="color: var(--color-primary-light);">Message</label>
+                            <textarea rows="4" class="mt-1 block w-full rounded-md shadow-sm"></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-primary text-white px-6 py-3 rounded-full hover:bg-primary-dark transition duration-300">
+                        <button type="submit" class="btn-primary w-full px-6 py-3 rounded-full font-semibold transition duration-300">
                             Send Message
                         </button>
                     </form>
@@ -258,38 +191,35 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="surface text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
-                    <img src="https://s3.ap-south-1.amazonaws.com/seedlinglabs.com/logo.png" 
-                         alt="Seedling Labs Logo" 
-                         class="h-8 w-auto mb-4"
-                         onerror="this.onerror=null;this.src='https://placehold.co/200x50/FFFFFF/1a73e8?text=Seedling+Labs';">
+                    <img src="logo.svg" alt="Seedling Labs Logo" class="seedling-logo mb-4" />
                     <p class="text-gray-400">Designing Intelligence. Building Products. Faster.</p>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <h3 class="text-lg font-semibold mb-4" style="color: var(--color-primary-light);">Company</h3>
                     <ul class="space-y-2">
-                        <li><a href="#vision" class="text-gray-400 hover:text-white">About</a></li>
-                        <li><a href="#advantage" class="text-gray-400 hover:text-white">Services</a></li>
-                        <li><a href="#workflow" class="text-gray-400 hover:text-white">Process</a></li>
+                        <li><a href="#vision" class="text-gray-400 hover:text-primary-light">About</a></li>
+                        <li><a href="#advantage" class="text-gray-400 hover:text-primary-light">Services</a></li>
+                        <li><a href="#workflow" class="text-gray-400 hover:text-primary-light">Process</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Resources</h3>
+                    <h3 class="text-lg font-semibold mb-4" style="color: var(--color-primary-light);">Resources</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Case Studies</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Documentation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-light">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-light">Case Studies</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-light">Documentation</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Connect</h3>
+                    <h3 class="text-lg font-semibold mb-4" style="color: var(--color-primary-light);">Connect</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">LinkedIn</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Twitter</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">GitHub</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-light">LinkedIn</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-light">Twitter</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-light">GitHub</a></li>
                     </ul>
                 </div>
             </div>
