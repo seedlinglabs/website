@@ -13,7 +13,9 @@
 }
 body {
     font-family: 'Inter', sans-serif;
-    background: radial-gradient(ellipse at 60% 0%, rgba(40,40,60,0.25) 0%, rgba(16,16,20,1) 80%), #101014;
+    background: 
+        radial-gradient(ellipse at 60% 0%, rgba(255,255,255,0.08) 0%, rgba(16,16,20,0.95) 60%, #101014 100%),
+        linear-gradient(120deg, #23242a 0%, #101014 60%, #23242a 100%);
     color: var(--color-text);
     line-height: 1.6;
 }
