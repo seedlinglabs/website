@@ -11,12 +11,12 @@
 </head>
 <body class="antialiased">
     <!-- Navigation -->
-    <nav class="fixed w-full surface backdrop-blur-md z-50 shadow-sm">
+    <nav class="fixed w-full" style="background:#101014;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center gap-3">
                     <img src="logo.svg" alt="Seedling Logo" class="seedling-logo mr-0" style="width:32px;height:32px;" />
-                    <span class="text-2xl font-bold wordmark text-white" style="margin-top:2px; letter-spacing:0;">Seedling Labs</span>
+                    <span class="text-lg font-semibold text-white" style="margin-top:2px; letter-spacing:0;">Seedling Labs</span>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#vision" class="nav-link">Vision</a>
@@ -29,10 +29,10 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center pt-16" style="background: var(--color-background);">
+    <section class="min-h-screen flex items-center pt-16 surface">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col md:flex-row items-center gap-12">
             <div class="flex-1 text-left animate-fade-in">
-                <h1 class="text-5xl md:text-7xl font-bold mb-6 gradient-text wordmark">
+                <h1 class="mb-6 gradient-text wordmark">
                     Seedling
                 </h1>
                 <h2 class="text-2xl md:text-3xl font-semibold mb-4" style="color: var(--color-text);">
@@ -80,7 +80,7 @@
     </section>
 
     <!-- Advantage Section -->
-    <section id="advantage" class="py-20" style="background: var(--color-background);">
+    <section id="advantage" class="py-20 surface">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">The Seedling Advantage</h2>
@@ -162,7 +162,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20" style="background: var(--color-background);">
+    <section id="contact" class="py-20 surface">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Ready to Build Your Next Product?</h2>
@@ -171,7 +171,7 @@
                 </p>
             </div>
             <div class="max-w-2xl mx-auto">
-                <div class="card p-8 rounded-2xl">
+                <div class="card p-8 rounded-2xl shadow-lg">
                     <form class="space-y-6">
                         <div>
                             <label class="block text-sm font-medium" style="color: var(--color-primary-light);">Name</label>
@@ -232,5 +232,33 @@
             </div>
         </div>
     </footer>
+
+    <script>
+    // Hide all sections except hero on load
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.style.overflow = 'hidden';
+      const sections = ['vision', 'advantage', 'workflow', 'contact'];
+      sections.forEach(id => document.getElementById(id).style.display = 'none');
+      // Nav click handlers
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', e => {
+          e.preventDefault();
+          const target = link.getAttribute('href').replace('#', '');
+          // Hide all
+          sections.forEach(id => document.getElementById(id).style.display = 'none');
+          // Show target
+          if (document.getElementById(target)) {
+            document.getElementById(target).style.display = '';
+          }
+          // Hide hero if not top
+          if (target !== 'vision') {
+            document.querySelector('section.min-h-screen').style.display = 'none';
+          } else {
+            document.querySelector('section.min-h-screen').style.display = '';
+          }
+        });
+      });
+    });
+    </script>
 </body>
 </html> 

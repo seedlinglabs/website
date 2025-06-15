@@ -13,14 +13,14 @@
 }
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--color-background);
+    background: radial-gradient(ellipse at 60% 0%, rgba(40,40,60,0.25) 0%, rgba(16,16,20,1) 80%), #101014;
     color: var(--color-text);
     line-height: 1.6;
 }
 h1, h2, h3, h4, h5, h6, .wordmark {
     font-family: 'Montserrat', 'Inter', sans-serif !important;
-    font-weight: 700 !important;
-    letter-spacing: -1px;
+    font-weight: 600 !important;
+    letter-spacing: 0;
 }
 .gradient-text {
     background: linear-gradient(90deg, #388E3C 0%, #FFEB3B 50%, #FF9800 100%);
@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5, h6, .wordmark {
     background: var(--gradient-primary);
 }
 .card {
-    background: var(--color-card);
+    background: #101014;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 24px 0 rgba(0,0,0,0.3);
 }
@@ -81,7 +81,7 @@ h1, h2, h3, h4, h5, h6, .wordmark {
     height: 40px;
 }
 .surface {
-    background: var(--color-surface);
+    background: #101014;
 }
 .btn-primary {
     background: #1565C0;
@@ -111,4 +111,12 @@ input, textarea {
 input:focus, textarea:focus {
     border-color: var(--color-primary);
     outline: none;
+}
+.wordmark {
+    font-family: 'Montserrat', 'Inter', sans-serif !important;
+    font-weight: 400 !important;
+    font-stretch: condensed;
+    font-size: 5rem !important;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
 } 
